@@ -1,7 +1,9 @@
 import discord
 import os
+from dotenv import load_dotenv
 
-TOKEN="ODg0NjA2MTk3MDQxMzMyMjM0.YTa7uA.668Hi-A3Aqx2BXa1PgUEyEhdBpY"
+load_dotenv()
+
 IMAGE_PATH="src/Foto1.jpg"
 IMAGE_PATH2="src/Foto2.png"
 
@@ -45,6 +47,6 @@ async def on_member_join(self,member):
     if guild.system_channel is not None:
         await guild.system_channel.send(f"Hola {guild.name} pa te saluda el ruecmen, diauer")
 
-client.run(TOKEN)
+client.run(os.getenv("TOKEN"))
 
 
