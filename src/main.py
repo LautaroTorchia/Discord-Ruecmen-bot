@@ -7,7 +7,6 @@ from handleMessages import *
 load_dotenv()
 bot = commands.Bot(command_prefix="$")
 
-
 @bot.command(name="tecman",help=TECMAN_HELP_MESSAGE)
 async def tecmanCommand(m):
     await handleTecmanChange(m,bot)
@@ -16,6 +15,15 @@ async def tecmanCommand(m):
 @bot.command(name="recman",help=RECMAN_HELP_TEXT)
 async def recmanCommand(m):
     await handleRecmanChange(m,bot)
+
+@bot.command(name="ono",help=ONO_HELP_TEXT)
+async def onoCommand(m):
+    await m.channel.send(f"{ONO_MESSAGE} "+"<@381907583687983107>")
+
+@bot.command(name="mh",help=SUMMONER_HELP_TEXT)
+async def matchHistoryCommand(m,region,summoner):
+    print(region,summoner)
+    await handleLolInfo(m,region,summoner)
 
 
 @bot.event
