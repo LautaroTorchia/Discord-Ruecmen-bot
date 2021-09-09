@@ -1,8 +1,11 @@
+import os
 import cassiopeia
 from constants import *
 import discord
+from dotenv import load_dotenv
 from cassiopeia import Summoner
 
+load_dotenv()
 
 async def handleMelMessage(m):
     if m.content.lower()==("mel") or m.content.lower()==("mal"):
@@ -29,12 +32,9 @@ async def handleRecmanChange(m,bot):
             
 
 async def handleLolInfo(m,region,summoner):
-    cassiopeia.set_riot_api_key("RGAPI-765777f5-0ec9-428a-9026-3f2b94c6378c")
+    cassiopeia.set_riot_api_key(os.getenv("RIOT_API_KEY"))
     my_summoner=Summoner(name=summoner,region=region)
-    print(my_summoner.account_id)
-    print(type(my_summoner.match_history))
-    campeones=my_summoner.match_history[0].blue_team
-    jugadores=campeones.participants
-    for i in jugadores:
-        print(i.champion.name)
+    ultimas5=my_summoner.match_history[:5]
+    print(ultimas5)
+
 
