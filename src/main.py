@@ -20,10 +20,14 @@ async def recmanCommand(m):
 async def onoCommand(m):
     await m.channel.send(f"{ONO_MESSAGE} "+"<@381907583687983107>")
 
-@bot.command(name="mh",help=SUMMONER_HELP_TEXT)
+@bot.command(name="match",help=MATCH_HISTORY_HELP_TEXT)
 async def matchHistoryCommand(m,region,summoner):
     print(region,summoner)
-    await handleLolInfo(m,region,summoner)
+    await handleLolMatchHistory(m,region,summoner)
+
+@bot.command(name="summoner",help=SUMMONER_PROFILE_HELP_TEXT)
+async def summonerProfileCommand(m,region,*args):
+    await handleLolProfile(m,region,args)
 
 
 @bot.event
@@ -32,13 +36,11 @@ async def on_ready():
 
 @bot.event
 async def on_message(m):
-    if m.author==bot.user:
+    if m.author==bot.user: #in case it tries to answer to himself
         return
-
     await handleMelMessage(m)
     await bot.process_commands(m)
-    
-                           
+                            
 @bot.event
 async def on_member_join(member):
     guild=member.guild

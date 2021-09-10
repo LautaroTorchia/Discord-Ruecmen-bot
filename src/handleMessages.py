@@ -31,10 +31,8 @@ async def handleRecmanChange(m,bot):
             await m.channel.send(RECMAN_ERROR_MESSAGE)
             
 
-async def handleLolInfo(m,region,summoner):
-    
+async def handleLolMatchHistory(m,region,summoner):
     formated_data=""
-
     cassiopeia.set_riot_api_key(os.getenv("RIOT_API_KEY"))
     my_summoner=Summoner(name=summoner,region=region)
     last_5=my_summoner.match_history[:5]
@@ -56,6 +54,18 @@ duracion:{i["duration"]}  game_id:{i["id"]}
 
         """
     await m.channel.send(formated_data)
+
+
+async def handleLolProfile(m,region,*args):
+    name=" ".join(args[0])
+    try:
+        my_summoner=Summoner(name=name,region=region.upper())
+        embed=discord.Embed(title=my_summoner.name,color=discord.Color.blue(),
+        url=f"https://{region}.op.gg/summoner/userName={name.replace(' ','+')}/",description="Este es el invocador que buscaste")
+        await m.channel.send(embed=embed)
+    except:
+        await m.channel.send(SUMMONER_NOT_FOUND_TEXT)
+
     
 
 
