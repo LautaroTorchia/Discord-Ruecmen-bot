@@ -11,6 +11,9 @@ bot = commands.Bot(command_prefix="$")
 async def tecmanCommand(m):
     await handleTecmanChange(m,bot)
 
+@bot.command(name="tecman-punchi",help="TECMAN pone un temon")
+async def punchiCommand(m):
+    await handlePlay(m)
 
 @bot.command(name="recman",help=RECMAN_HELP_TEXT)
 async def recmanCommand(m):
@@ -21,14 +24,12 @@ async def onoCommand(m):
     await m.channel.send(f"{ONO_MESSAGE} "+"<@381907583687983107>")
 
 @bot.command(name="match",help=MATCH_HISTORY_HELP_TEXT)
-async def matchHistoryCommand(m,region,summoner):
-    print(region,summoner)
-    await handleLolMatchHistory(m,region,summoner)
+async def matchHistoryCommand(m,region,*args):
+    await handleLolMatchHistory(m,region,*args)
 
 @bot.command(name="summoner",help=SUMMONER_PROFILE_HELP_TEXT)
 async def summonerProfileCommand(m,region,*args):
-    await handleLolProfile(m,region,args)
-
+    await handleLolProfile(m,region,*args)
 
 @bot.event
 async def on_ready():

@@ -1,8 +1,9 @@
 
 #Pathings
 
-IMAGE_PATH="src/Foto1.png"
-IMAGE_PATH2="src/Foto2.jpg"
+IMAGE_PATH="src/images_music/Foto1.png"
+IMAGE_PATH2="src/images_music/Foto2.jpg"
+MUSIC_PATH1="src/images_music/Nightcore - Highscore_50k.mp3"
 
 
 #Messages
@@ -14,6 +15,7 @@ RECMAN_APPEAR_MESSAGE="Volvi a la normalidad"
 RECMAN_ERROR_MESSAGE="No estoy preparado para volver(Ocurrio un error al cambiar)"
 ONO_MESSAGE="a nadie le importa,O no lauti?"
 SUMMONER_NOT_FOUND_TEXT="No se encontro al invocador ingresado,intenta otra vez"
+TECMAN_LEAVES_VOICE_CHAT_TEXT="Mi trabajo aqui esta hecho nomas punchi punchi"
 
 TECMAN_HELP_MESSAGE="Con este commando me convierto en la bestia definitiva TECMAN"
 RECMAN_HELP_TEXT="Con esto vuelvo a ser el bot recman"
