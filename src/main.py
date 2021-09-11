@@ -14,7 +14,7 @@ async def tecmanCommand(m):
     await handleTecmanChange(m,bot)
     await handlePlay(m)
 
-@bot.command(name="tecman-punchi",help="TECMAN pone un temon")
+@bot.command(name="tecman-punchi",help="TECMAN pone un TEMON")
 async def punchiCommand(m):
     await handlePlay(m)
 
