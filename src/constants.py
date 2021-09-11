@@ -16,9 +16,13 @@ RECMAN_ERROR_MESSAGE="No estoy preparado para volver(Ocurrio un error al cambiar
 ONO_MESSAGE="a nadie le importa,O no lauti?"
 SUMMONER_NOT_FOUND_TEXT="No se encontro al invocador ingresado,intenta otra vez"
 TECMAN_LEAVES_VOICE_CHAT_TEXT="Mi trabajo aqui esta hecho nomas punchi punchi"
+JUBILADITA_MESSAGE="UHHHHH que ganas de cogerme a una **JUBILADITA**"
 
-TECMAN_HELP_MESSAGE="Con este commando me convierto en la bestia definitiva TECMAN"
-RECMAN_HELP_TEXT="Con esto vuelvo a ser el bot recman"
-ONO_HELP_TEXT="Busco complices porque a nadie le importa tu msg"
+
+TECMAN_HELP_MESSAGE="{$tecman} Con este commando me convierto en la bestia definitiva TECMAN"
+RECMAN_HELP_TEXT="{$recman} Con esto vuelvo a ser el bot recman"
+ONO_HELP_TEXT="{$ono}  Busco complices porque a nadie le importa tu msg"
 MATCH_HISTORY_HELP_TEXT="{$summoner region nick} Busco un nombre de invocador y devuelvo su historial"
 SUMMONER_PROFILE_HELP_TEXT="{$summoner region nick} Busco un invocador por su nombre y devuelvo su op.gg"
+JUBILADITA_HELP_TEXT="{$sexo} Te digo mis mas profundos secretos"
+MEME_GENERATION_HELP="{$meme} Me pongo el traje de payaso y te cuento un chiste"

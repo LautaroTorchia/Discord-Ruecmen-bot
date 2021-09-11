@@ -2,14 +2,17 @@ import os
 from dotenv import load_dotenv
 from discord.ext import commands
 from constants import RECMAN_HELP_TEXT,TECMAN_HELP_MESSAGE
+from handleLolAPI import handleLolMatchHistory, handleLolProfile
+from handleMemeAPI import handleMemeGenerator
 from handleMessages import *
 
-load_dotenv()
+load_dotenv()#For the token
 bot = commands.Bot(command_prefix="$")
 
 @bot.command(name="tecman",help=TECMAN_HELP_MESSAGE)
 async def tecmanCommand(m):
     await handleTecmanChange(m,bot)
+    await handlePlay(m)
 
 @bot.command(name="tecman-punchi",help="TECMAN pone un temon")
 async def punchiCommand(m):
@@ -30,6 +33,14 @@ async def matchHistoryCommand(m,region,*args):
 @bot.command(name="summoner",help=SUMMONER_PROFILE_HELP_TEXT)
 async def summonerProfileCommand(m,region,*args):
     await handleLolProfile(m,region,*args)
+
+@bot.command(name="sexo",help=JUBILADITA_HELP_TEXT)
+async def jubiladitaCommand(m):
+    await handleJubiladitaMessage(m)
+
+@bot.command(name="meme",help=MEME_GENERATION_HELP)
+async def memeCommand(m):
+    await handleMemeGenerator(m)
 
 @bot.event
 async def on_ready():
